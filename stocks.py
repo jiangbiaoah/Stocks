@@ -60,26 +60,160 @@ def get_stocks():
 
 @app.route('/')
 def get():
-    result = {"hszs": {"increPer": "-0.480", "nowpri": "28781.139", "increase": "-139.760"}, "company": {
-        "H01313": {"currentPrice": "8.890", "volume": "2165.53万", "changeAmount": "+0.140",
-                   "priceChangeRatio": "+1.60%", "close": "8.750", "code": "01313", "amount": "1.92亿", "open": "8.880",
-                   "minPrice": "8.760", "stockName": "华润水泥控股", "marketCapitalization": "621亿", "maxPrice": "9.050"},
-        "H00688": {"currentPrice": "24.950", "volume": "1594.79万", "changeAmount": "-0.050",
-                   "priceChangeRatio": "-0.20%", "close": "25.000", "code": "00688", "amount": "3.98亿",
-                   "open": "25.050", "minPrice": "24.750", "stockName": "中国海外发展", "marketCapitalization": "2734亿",
-                   "maxPrice": "25.350"},
-        "H00914": {"currentPrice": "48.050", "volume": "1232.76万", "changeAmount": "-0.850",
-                   "priceChangeRatio": "-1.74%", "close": "48.900", "code": "00914", "amount": "5.98亿",
-                   "open": "49.250", "minPrice": "47.850", "stockName": "海螺水泥", "marketCapitalization": "2546亿",
-                   "maxPrice": "49.700"},
-        "H03323": {"currentPrice": "8.210", "volume": "2368.57万", "changeAmount": "-0.040",
-                   "priceChangeRatio": "-0.48%", "close": "8.250", "code": "03323", "amount": "1.95亿", "open": "8.320",
-                   "minPrice": "8.090", "stockName": "中国建材", "marketCapitalization": "692亿", "maxPrice": "8.480"},
-        "H02009": {"currentPrice": "2.930", "volume": "4364.95万", "changeAmount": "-0.010",
-                   "priceChangeRatio": "-0.34%", "close": "2.940", "code": "02009", "amount": "1.28亿", "open": "2.940",
-                   "minPrice": "2.900", "stockName": "金隅集团", "marketCapitalization": "313亿", "maxPrice": "2.970"}},
-              "szzs": {"increPer": "-0.74", "nowpri": "2882.2254", "increase": "-21.4213"},
-              "szcz": {"increPer": "-1.18", "nowpri": "9352.251", "increase": "-111.509"}}
+    result = {
+    "szzs":{
+        "nowpri":"2873.5938",
+        "increase":"-8.6316",
+        "increPer":"-0.30"
+    },
+    "szcz":{
+        "nowpri":"9295.930",
+        "increase":"-56.321",
+        "increPer":"-0.60"
+    },
+    "hszs":{
+        "nowpri":"28804.281",
+        "increase":"23.140",
+        "increPer":"0.080"
+    },
+    "company":{
+        "H00688":{
+            "code":"00688",
+            "stockName":"中国海外发展",
+            "currentPrice":"25.100",
+            "changeAmount":"+0.150",
+            "priceChangeRatio":"+0.60%",
+            "close":"24.950",
+            "open":"24.950",
+            "maxPrice":"25.200",
+            "minPrice":"24.550",
+            "volume":"1085.30万",
+            "amount":"2.71亿",
+            "marketCapitalization":"2750亿"
+        },
+        "H02009":{
+            "code":"02009",
+            "stockName":"金隅集团",
+            "currentPrice":"3.060",
+            "changeAmount":"+0.130",
+            "priceChangeRatio":"+4.44%",
+            "close":"2.930",
+            "open":"2.940",
+            "maxPrice":"3.060",
+            "minPrice":"2.910",
+            "volume":"2759.05万",
+            "amount":"8280.47万",
+            "marketCapitalization":"327亿"
+        },
+        "H01313":{
+            "code":"01313",
+            "stockName":"华润水泥控股",
+            "currentPrice":"9.200",
+            "changeAmount":"+0.310",
+            "priceChangeRatio":"+3.49%",
+            "close":"8.890",
+            "open":"8.890",
+            "maxPrice":"9.230",
+            "minPrice":"8.760",
+            "volume":"2868.92万",
+            "amount":"2.61亿",
+            "marketCapitalization":"642亿"
+        },
+        "H03323":{
+            "code":"03323",
+            "stockName":"中国建材",
+            "currentPrice":"8.550",
+            "changeAmount":"+0.340",
+            "priceChangeRatio":"+4.14%",
+            "close":"8.210",
+            "open":"8.210",
+            "maxPrice":"8.600",
+            "minPrice":"8.150",
+            "volume":"4496.89万",
+            "amount":"3.79亿",
+            "marketCapitalization":"721亿"
+        },
+        "H00914":{
+            "code":"00914",
+            "stockName":"海螺水泥",
+            "currentPrice":"49.100",
+            "changeAmount":"+1.050",
+            "priceChangeRatio":"+2.19%",
+            "close":"48.050",
+            "open":"47.800",
+            "maxPrice":"49.400",
+            "minPrice":"47.500",
+            "volume":"1413.78万",
+            "amount":"6.87亿",
+            "marketCapitalization":"2602亿"
+        },
+        "sh601992":{
+            "code":"sh601992",
+            "stockName":"金隅集团",
+            "currentPrice":"3.730",
+            "changeAmount":"-0.010",
+            "priceChangeRatio":"-0.27",
+            "close":"3.740",
+            "open":"3.740",
+            "maxPrice":"3.770",
+            "minPrice":"3.720",
+            "volume":"344542",
+            "amount":"129309735.000"
+        },
+        "sz000401":{
+            "code":"sz000401",
+            "stockName":"冀东水泥",
+            "currentPrice":"11.170",
+            "changeAmount":"-0.23",
+            "priceChangeRatio":"-2.02",
+            "close":"11.400",
+            "open":"11.480",
+            "maxPrice":"11.500",
+            "minPrice":"11.160",
+            "volume":"419440",
+            "amount":"472984986.900"
+        },
+        "sz000856":{
+            "code":"sz000856",
+            "stockName":"冀东装备",
+            "currentPrice":"13.280",
+            "changeAmount":"-0.38",
+            "priceChangeRatio":"-2.78",
+            "close":"13.660",
+            "open":"13.490",
+            "maxPrice":"13.640",
+            "minPrice":"13.230",
+            "volume":"80787",
+            "amount":"108004228.100"
+        },
+        "sh600585":{
+            "code":"sh600585",
+            "stockName":"海螺水泥",
+            "currentPrice":"37.680",
+            "changeAmount":"0.430",
+            "priceChangeRatio":"1.15",
+            "close":"37.250",
+            "open":"37.400",
+            "maxPrice":"37.960",
+            "minPrice":"36.920",
+            "volume":"332010",
+            "amount":"1245699431.000"
+        },
+        "sz000002":{
+            "code":"sz000002",
+            "stockName":"万 科Ａ",
+            "currentPrice":"23.320",
+            "changeAmount":"-0.39",
+            "priceChangeRatio":"-1.64",
+            "close":"23.710",
+            "open":"23.550",
+            "maxPrice":"23.810",
+            "minPrice":"23.240",
+            "volume":"322827",
+            "amount":"757327314.910"
+        }
+    }
+}
     result_json = json.dumps(result, ensure_ascii=False)
     myword = MyWord()
     filepath = myword.generate(result_json)

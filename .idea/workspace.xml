@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="44119363-476c-496d-b201-704035d03f46" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyStocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyStocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyWord.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyWord.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,7 +20,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -38,7 +35,7 @@
       <file leaf-file-name="pyWord.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyWord.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
+            <state relative-caret-position="-2172">
               <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
               <folding>
                 <element signature="e#934#1167#0" />
@@ -53,10 +50,22 @@
       <file leaf-file-name="MyStocks.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyStocks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
+            <state relative-caret-position="215">
               <caret line="155" column="19" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
               <folding>
                 <element signature="e#24#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stocks.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/stocks.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1956">
+              <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+              <folding>
+                <element signature="e#24#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,9 +85,9 @@
         <option value="$PROJECT_DIR$/other.py" />
         <option value="$PROJECT_DIR$/start.sh" />
         <option value="$PROJECT_DIR$/MyStocks.py" />
-        <option value="$PROJECT_DIR$/stocks.py" />
         <option value="$PROJECT_DIR$/pyWord.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/stocks.py" />
       </list>
     </option>
   </component>
@@ -390,8 +399,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3355372" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3272727" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20196672" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32561985" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20196672" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.24281392" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32980332" />
@@ -682,29 +691,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stocks.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" column="41" lean-forward="true" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
-            <element signature="e#24#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyStocks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="155" column="19" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
-          <folding>
-            <element signature="e#24#35#0" expanded="true" />
+            <element signature="e#24#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pyWord.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="-2172">
           <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
           <folding>
             <element signature="e#934#1167#0" />
@@ -715,12 +714,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/MyStocks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="215">
+          <caret line="155" column="19" selection-start-line="155" selection-start-column="19" selection-end-line="155" selection-end-column="19" />
           <folding>
-            <element signature="e#24#46#0" expanded="true" />
+            <element signature="e#24#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stocks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1956">
+          <caret line="215" column="1" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="1" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
