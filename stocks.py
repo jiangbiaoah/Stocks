@@ -17,12 +17,12 @@ def get_stocks():
         t = MyStocks()
         # stocks_hk = ['00688']
         company = {}
-        for stock in stocks_hk:
-            res = t.request_stocks(stock)
+        for stock_hk in stocks_hk:
+            res = t.request_stocks(stock_hk)
             result_t = t.get_needs(res)
-            name = 'H' + stock
+            name = 'H' + stock_hk
             company[name] = result_t
-        results['company'] = company
+        # results['company'] = company
 
         h = HangQing()
         res_h1 = h.request1(0)
@@ -36,6 +36,13 @@ def get_stocks():
         res_h3 = h.request2()
         result_h3 = h.get_needs(res_h3, 2)
         results['hszs'] = result_h3
+
+        stocks_a = ['sh601992', 'sz000401', 'sz000856', 'sh600585', 'sz000002']
+        for stock_a in stocks_a:
+            res = h.request1(-1, stock_a)
+            result_h = h.get_needs_a(res)
+            company[stock_a] = result_h
+        results['company'] = company
 
         result_json = json.dumps(results, ensure_ascii=False)
         print('request data complete')

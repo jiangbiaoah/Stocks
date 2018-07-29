@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
 import datetime
-import re
 from docx import Document
 from MyStocks import remaindecimal
 from docx.shared import RGBColor, Pt
@@ -78,7 +77,7 @@ class MyWord():
     def __change_table_1(self):
         table_1 = self.doc.tables[0]
 
-        stocks_a = ['H02009', 'H00914', 'H03323', 'H01313', 'H00688']
+        stocks_a = ['sh601992', 'sz000401', 'sz000856', 'sh600585', 'sz000002']
         var = -1
         for row in table_1.rows:
             cell = row.cells
@@ -86,13 +85,35 @@ class MyWord():
                 var = 0
                 continue
             cell[0].text = ''
-            cell[1].text = 'CNY'
+            cell[1].text = ''   # CNY
             cell[2].text = ''
             cell[3].text = ''
             cell[4].text = ''
             cell[5].text = ''
             cell[6].text = ''
             cell[7].text = ''
+
+            run = cell[0].paragraphs[0].add_run(self.result['company'][stocks_a[var]]['stockName'])
+            run.font.size = Pt(12)
+
+            run = cell[1].paragraphs[0].add_run('CNY')
+            run.font.size = Pt(12)
+
+            run = cell[2].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_a[var]]['currentPrice']))
+            run.font.size = Pt(12)
+            run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
+
+            run = cell[3].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_a[var]]['changeAmount']))
+            run.font.size = Pt(12)
+            run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
+
+            run = cell[4].paragraphs[0].add_run(self.result['company'][stocks_a[var]]['priceChangeRatio'])
+            run.font.size = Pt(12)
+            run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
+
+            run = cell[5].paragraphs[0].add_run(remaindecimal(str(float(self.result['company'][stocks_a[var]]['amount'])/100000000)))
+            run.font.size = Pt(12)
+
             var = var + 1
 
     def __change_table_2(self):

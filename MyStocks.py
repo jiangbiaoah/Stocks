@@ -8,8 +8,6 @@ from urllib.request import urlopen
 # ----------------------------------
 # HK:00688,02009,01313,03323,00914
 # 600026,000002,600585,000856,601992,000401
-# 601992,000401,000856,600585,000002
-# 02009,00914,03323,01313,00688
 # ----------------------------------
 class MyStocks:
     appkey = "9808007c691a6f944c6edeaad2a829db"
@@ -36,9 +34,9 @@ class MyStocks:
             if error_code == 0:
                 # 成功请求
                 # print(res["result"])
-                print("Request Successful")
+                print("Request Successful--MyStocks request_stocks")
             else:
-                print("%s:%s" % (res["error_code"], res["reason"]))
+                print("MyStocks request_stocks %s:%s" % (res["error_code"], res["reason"]))
         else:
             print("request api error")
         return res
@@ -70,10 +68,10 @@ class HangQing():
     appkey = "bb79e2c25150abd9b4cf5a0b9a806185"
 
     # 1.沪深股市
-    def request1(self, type=0, m="GET"):
+    def request1(self, type=0, gid='', m="GET"):
         url = "http://web.juhe.cn:8080/finance/stock/hs"
         params = {
-            "gid": "",  # 股票编号，上海股市以sh开头，深圳股市以sz开头如：sh601009
+            "gid": gid,  # 股票编号，上海股市以sh开头，深圳股市以sz开头如：sh601009
             "key": self.appkey,  # APP Key
             "type": type,  # 0代表上证指数，1代表深证指数
 
@@ -90,9 +88,9 @@ class HangQing():
             error_code = res["error_code"]
             if error_code == 0:
                 # 成功请求
-                print("Request Successful")
+                print("Request Successful--HangQing Request1")
             else:
-                print("%s:%s" % (res["error_code"], res["reason"]))
+                print("HangQing Request1 %s:%s" % (res["error_code"], res["reason"]))
         else:
             print("request api error")
         return res
@@ -117,17 +115,18 @@ class HangQing():
             error_code = res["error_code"]
             if error_code == 0:
                 # 成功请求
-                print("Request Successful")
+                print("Request Successful--HangQing Request2")
             else:
-                print("%s:%s" % (res["error_code"], res["reason"]))
+                print("HangQing Request2 %s:%s" % (res["error_code"], res["reason"]))
         else:
             print("request api error")
         return res
 
+    # 从返回的json数据中提取上证指数、深证成指数据
     def get_needs(self, res, type=1):
-        if res["error_code"] != 0:
-            return
         result = {}
+        if res["error_code"] != 0:
+            return result
         if type == 1:   # 上证指数/深证成指
             result['nowpri'] = res['result']['nowpri']  # 深证成指/上证指数
             result['increase'] = res['result']['increase']  # 涨跌额
@@ -139,6 +138,25 @@ class HangQing():
 
         return result
 
+    # 从返回的json数据中提取A股市场数据
+    def get_needs_a(self, res):
+        result = {}
+        if res["error_code"] != 0:
+            return result
+        result['code'] = res['result'][0]['data']['gid']  # 股票代码*
+        result['stockName'] = res['result'][0]['data']['name']  # 股票名称*
+        result['currentPrice'] = res['result'][0]['data']['nowPri']  # 最新价*
+        result['changeAmount'] = res['result'][0]['data']['increase']  # 涨跌额*
+        result['priceChangeRatio'] = res['result'][0]['data']['increPer']  # 涨跌幅*
+        result['close'] = res['result'][0]['data']['yestodEndPri']  # 昨收
+        result['open'] = res['result'][0]['data']['todayStartPri']  # 今开
+        result['maxPrice'] = res['result'][0]['data']['todayMax']  # 最高
+        result['minPrice'] = res['result'][0]['data']['todayMin']  # 最低
+        result['volume'] = res['result'][0]['data']['traNumber']  # 成交量
+        result['amount'] = res['result'][0]['data']['traAmount']  # 成交额*
+        # result['marketCapitalization'] =   # 市值*
+        # self.result['turnOverRate'] =  # 换手率*
+        return result
 
 def remaindecimal(string, num=2):
     result = str(round(float(string), num))
