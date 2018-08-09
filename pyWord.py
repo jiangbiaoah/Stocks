@@ -45,7 +45,7 @@ class MyWord():
         run.font.size = Pt(14)
         run.font.bold = True
 
-        run = par.add_run('%s， %s， %s%%' % (remaindecimal(self.result['szzs']['nowpri']), remaindecimal(self.result['szzs']['increase']), remaindecimal(self.result['szzs']['increPer'])))
+        run = par.add_run('%s， %s， %s%%' % (remaindecimal(self.result['szzs']['nowpri']), remaindecimal(self.result['szzs']['increase'], symbol=1), remaindecimal(self.result['szzs']['increPer'], symbol=1)))
         run.font.size = Pt(14)
         run.font.bold = True
         run.font.color.rgb = self.__get_font_color(float(self.result['szzs']['increase']))
@@ -57,7 +57,7 @@ class MyWord():
         run.font.size = Pt(14)
         run.font.bold = True
 
-        run = par.add_run('%s， %s， %s%%' % (remaindecimal(self.result['szcz']['nowpri']), remaindecimal(self.result['szcz']['increase']), remaindecimal(self.result['szcz']['increPer'])))
+        run = par.add_run('%s， %s， %s%%' % (remaindecimal(self.result['szcz']['nowpri']), remaindecimal(self.result['szcz']['increase'], symbol=1), remaindecimal(self.result['szcz']['increPer'], symbol=1)))
         run.font.size = Pt(14)
         run.font.bold = True
         run.font.color.rgb = self.__get_font_color(float(self.result['szcz']['increase']))
@@ -69,7 +69,7 @@ class MyWord():
         run.font.size = Pt(14)
         run.font.bold = True
 
-        run = par.add_run('%s， %s， %s%%' % (remaindecimal(self.result['hszs']['nowpri']), remaindecimal(self.result['hszs']['increase']), remaindecimal(self.result['hszs']['increPer'])))
+        run = par.add_run('%s， %s， %s%%' % (remaindecimal(self.result['hszs']['nowpri']), remaindecimal(self.result['hszs']['increase'], symbol=1), remaindecimal(self.result['hszs']['increPer'], symbol=1)))
         run.font.size = Pt(14)
         run.font.bold = True
         run.font.color.rgb = self.__get_font_color(float(self.result['hszs']['increase']))
@@ -103,11 +103,11 @@ class MyWord():
             run.font.size = Pt(12)
             run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
 
-            run = cell[3].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_a[var]]['changeAmount']))
+            run = cell[3].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_a[var]]['changeAmount'], symbol=1))
             run.font.size = Pt(12)
             run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
 
-            run = cell[4].paragraphs[0].add_run(self.result['company'][stocks_a[var]]['priceChangeRatio'])
+            run = cell[4].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_a[var]]['priceChangeRatio'], symbol=1))
             run.font.size = Pt(12)
             run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
 
@@ -144,7 +144,7 @@ class MyWord():
             run.font.size = Pt(12)
             run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_hk[var]]['changeAmount']))
 
-            run = cell[3].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_hk[var]]['changeAmount']))
+            run = cell[3].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_hk[var]]['changeAmount'], symbol=1))
             run.font.size = Pt(12)
             run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_hk[var]]['changeAmount']))
 

@@ -3,6 +3,7 @@ import json
 import re
 from urllib.parse import urlencode
 from urllib.request import urlopen
+from decimal import *
 
 
 # ----------------------------------
@@ -158,6 +159,12 @@ class HangQing():
         # self.result['turnOverRate'] =  # 换手率*
         return result
 
-def remaindecimal(string, num=2):
-    result = str(round(float(string), num))
+
+# symbol = 0 默认不显示正负号
+def remaindecimal(string, symbol=0):
+    if symbol == 1 and float(string) >= 0:
+        # result = '+' + str(round(float(string)))
+        result = '+' + str(Decimal(string).quantize(Decimal('0.00')))
+    else:
+        result = str(Decimal(string).quantize(Decimal('0.00')))
     return result
