@@ -107,7 +107,7 @@ class MyWord():
             run.font.size = Pt(12)
             run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
 
-            run = cell[4].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_a[var]]['priceChangeRatio'], symbol=1))
+            run = cell[4].paragraphs[0].add_run(remaindecimal(self.result['company'][stocks_a[var]]['priceChangeRatio'], symbol=1) + '%')
             run.font.size = Pt(12)
             run.font.color.rgb = self.__get_font_color(float(self.result['company'][stocks_a[var]]['changeAmount']))
 
